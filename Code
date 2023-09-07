@@ -1,0 +1,51 @@
+# Function to calculate final velocity
+def calculate_velocity(initial_velocity, acceleration, time):
+    final_velocity = initial_velocity + (acceleration * time)
+    return final_velocity
+
+# Function to calculate displacement
+def calculate_displacement(initial_velocity, time, acceleration):
+    displacement = initial_velocity * time + 0.5 * acceleration * (time ** 2)
+    return displacement
+
+# Function to calculate acceleration
+def calculate_acceleration(initial_velocity, final_velocity, time):
+    acceleration = (final_velocity - initial_velocity) / time
+    return acceleration
+
+while True:
+    print("Physics Calculator Menu:")
+    print("1. Calculate Final Velocity")
+    print("2. Calculate Displacement")
+    print("3. Calculate Acceleration")
+    print("4. Exit")
+
+    choice = input("Select an option (1/2/3/4): ")
+
+    if choice == "1":
+        initial_velocity = float(input("Enter the initial velocity (m/s): "))
+        acceleration = float(input("Enter the acceleration (m/s^2): "))
+        time = float(input("Enter the time (s): "))
+        final_velocity = calculate_velocity(initial_velocity, acceleration, time)
+        print(f"The final velocity is {final_velocity} m/s")
+
+    elif choice == "2":
+        initial_velocity = float(input("Enter the initial velocity (m/s): "))
+        time = float(input("Enter the time (s): "))
+        acceleration = float(input("Enter the acceleration (m/s^2): "))
+        displacement = calculate_displacement(initial_velocity, time, acceleration)
+        print(f"The displacement is {displacement} meters")
+
+    elif choice == "3":
+        initial_velocity = float(input("Enter the initial velocity (m/s): "))
+        final_velocity = float(input("Enter the final velocity (m/s): "))
+        time = float(input("Enter the time (s): "))
+        acceleration = calculate_acceleration(initial_velocity, final_velocity, time)
+        print(f"The acceleration is {acceleration} m/s^2")
+
+    elif choice == "4":
+        print("Exiting the Physics Calculator. Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please select a valid option.")
